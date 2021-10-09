@@ -1,0 +1,49 @@
+$primary-blue: #215184;
+$font-color: #545454;
+$font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
+
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url('../Fonts/BrandonGrotesque-Bold.woff2') format('woff2'),
+      url('../Fonts/BrandonGrotesque-Bold.woff') format('woff'),
+      url('../Fonts/BrandonGrotesque-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url('../Fonts/BrandonGrotesque-Regular.woff2') format('woff2'),
+      url('../Fonts/BrandonGrotesque-Regular.woff') format('woff'),
+      url('../Fonts/BrandonGrotesque-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url('../Fonts/BrandonGrotesque-RegularItalic.woff2') format('woff2'),
+      url('../Fonts/BrandonGrotesque-RegularItalic.woff') format('woff'),
+      url('../Fonts/BrandonGrotesque-RegularItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url('../Fonts/BrandonGrotesque-Black.woff2') format('woff2'),
+      url('../Fonts/BrandonGrotesque-Black.woff') format('woff'),
+      url('../Fonts/BrandonGrotesque-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url('../Fonts/BrandonGrotesque-Medium.woff2') format('woff2'),
+      url('../Fonts/BrandonGrotesque-Medium.woff') format('woff'),
+      url('../Fonts/BrandonGrotesque-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+

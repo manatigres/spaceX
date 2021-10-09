@@ -1,0 +1,54 @@
+.missions {
+
+    top: 0;
+    right: 0;
+}
+
+.missionElement {
+    display: flex;
+    align-items: center;
+    border: none;
+    width: 50%;
+    margin-bottom: 10px;
+    height: 80px;
+    border-radius: 10px;
+    box-shadow: 5px 3px 5px rgb(0 0 0 / 0.2);
+    
+}
+
+.mission-number {
+    font-size: 40px;
+    color: #545454;
+    font-weight: 500;
+    width: 15%;
+    margin-left: 40px;
+}
+
+.mission-name {
+    font-size: 32px;
+    color: #545454;
+    font-weight: 500;
+    width: 60%;
+}
+
+.date-rocket-container {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    width: 25%;
+    margin-right: 40px;
+}
+
+.date {
+    font-size: 16px;
+    color: #545454;
+    font-weight: 400;
+    
+}
+
+.rocket-name {
+    font-size: 24px;
+    color: #545454;
+    font-weight: 700;
+    
+}
