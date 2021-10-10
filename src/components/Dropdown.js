@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import select from '../icons/select.png'
 import sort from '../icons/sort.png'
-import { MissionContext } from '../App'
+import { MissionContext } from './App'
 
 
 

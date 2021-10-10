@@ -1,5 +1,13 @@
+.image-container {
+    width: 50%;
+    height: auto;
+    position: relative;
+}
+
+
 .rocket-image {
     position: absolute;
-    top: 260px;
+    top: -100px;
     left: 70px;
+    width: 70%;
 }

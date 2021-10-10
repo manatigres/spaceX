@@ -1,7 +1,7 @@
 import React, { useContext} from 'react'
 import logo from '../Images/spacex-logo.png'
 import refresh from '../icons/refresh.png'
-import { MissionContext } from '../App'
+import { MissionContext } from './App'
 import Dropdown from './Dropdown'
 
 

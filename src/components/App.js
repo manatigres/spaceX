@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import scss from './CSS/stylesheet.scss'
-import app from './CSS/app.css'
-import Contacts from './components/contacts';
-import Header from './components/Header';
-import Image from './components/Image';
+import scss from '../CSS/stylesheet.scss'
+import app from '../CSS/app.css'
+import Contacts from './contacts';
+import Header from './Header';
+import Image from './Image';
 
 const url = 'https://api.spacexdata.com/v3/launches'
 export const MissionContext = React.createContext()
