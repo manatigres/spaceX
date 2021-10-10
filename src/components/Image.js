@@ -4,7 +4,7 @@ import image from '../Images/launch-home.png'
 export default function Image() {
     return (
         <div>
-            <img src={image}  alt="xSpace"/>
+            <img className="rocket-image" src={image}  alt="xSpace"/>
         </div>
     )
 }

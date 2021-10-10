@@ -6,35 +6,64 @@ import Contacts from './components/contacts';
 import Header from './components/Header';
 import Image from './components/Image';
 
-const url = 'https://api.spacexdata.com/v3/launches?limit=10'
-export const RecipeContext = React.createContext()
+const url = 'https://api.spacexdata.com/v3/launches'
+export const MissionContext = React.createContext()
+let sort_ascending = false
+let originalMissionList
 
 
 export default function App() {
 
     const [missions, setMissions] = useState()
 
-
     useEffect( () =>{
         const getMissions = async () => {
             const missionList =  await axios(url);
             setMissions(missionList.data);
+            originalMissionList = [...missionList.data]
         }
         getMissions()
     }, []);
 
+    console.log(originalMissionList)
 
-    console.log(missions)
 
+
+    const MissionContextValue = {
+        handleMissionSort,
+        handleReloadData
+      }
+
+    function handleMissionSort() {
+        let new_arr = [...missions]
+
+        if(sort_ascending == false){
+            new_arr.sort((a, b) => {
+                return b.launch_date_unix - a.launch_date_unix;
+            })
+            sort_ascending = true
+        }else{
+            new_arr.sort((a, b) => {
+                return a.launch_date_unix - b.launch_date_unix;
+            })
+            sort_ascending = false
+        }
+        
+        setMissions(new_arr)
+        
+    }
     
-    
-
+    function handleReloadData() {
+        console.log("ahdhf")
+        setMissions(originalMissionList)
+        sort_ascending = false
+    }
 
     return (
-        <RecipeContext.Provider >
+        <MissionContext.Provider value={MissionContextValue}>
             <Header />
             <Image />
             { missions && <Contacts contacts={missions} /> }
-        </RecipeContext.Provider>
+        </MissionContext.Provider>
     )
 }

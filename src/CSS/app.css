@@ -1,5 +1,6 @@
 @import './Header.css';
 @import './Missions.css';
+@import './Image.css';
 
 .btn{
     display: flex;
