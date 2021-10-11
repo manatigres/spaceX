@@ -9,7 +9,7 @@ export default function Mission(props) {
         rocket
     } = props
 
-
+    //Get date
     var d = new Date(launch_date_unix*1000);
     const month = d.toLocaleString("en-US", {month: "short"})
     const day = d.toLocaleString("en-US", {day: "numeric"})

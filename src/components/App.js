@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import scss from '../CSS/stylesheet.scss'
 import app from '../CSS/app.css'
-import Contacts from './contacts';
+import AllMissions from './AllMissions';
 import Header from './Header';
 import Image from './Image';
 
@@ -18,17 +18,22 @@ export default function App() {
 
     const [missions, setMissions] = useState()
 
+    //get data
     useEffect( () =>{
         const getMissions = async () => {
-            const missionList =  await axios(url);
-            setMissions(missionList.data);
-            originalMissionList = [...missionList.data]
-            createYearList()
+            try{
+                const missionList =  await axios(url);
+                setMissions(missionList.data);
+                originalMissionList = [...missionList.data]
+                createYearList()
+            } catch (e) {
+                console.log(e)
+            }
         }
         getMissions()
     }, []);
 
-    
+    //useContext variable    
     const MissionContextValue = {
         handleMissionSort,
         handleReloadData,
@@ -36,6 +41,7 @@ export default function App() {
         yearList
       }
 
+    //sort by date
     function handleMissionSort() {
         let new_arr = [...missions]
 
@@ -55,16 +61,18 @@ export default function App() {
         
     }
     
+    //reload data
     function handleReloadData() {
         setMissions(originalMissionList)
         sort_ascending = false
     }
 
+    //filter by year
     function handleFilterByYear(year){
         setMissions(originalMissionList.filter(mission => mission.launch_year == year))
     }
 
-
+    //get launch date
     function createYearList() {
         for(let year of originalMissionList){
             yearList.includes(year.launch_year) ? console.log('Already included') : yearList.push(year.launch_year)
@@ -77,7 +85,7 @@ export default function App() {
         <MissionContext.Provider value={MissionContextValue}>
             <Header />
             <Image />
-            { missions && <Contacts contacts={missions} /> }
+            { missions && <AllMissions missions={missions} /> }
         </MissionContext.Provider>
     )
 }
